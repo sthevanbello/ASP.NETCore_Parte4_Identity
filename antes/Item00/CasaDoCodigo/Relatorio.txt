@@ -55,3 +55,43 @@ Itens:
     Subtotal: $49.90
 =============================================
 
+=============================================
+No. Pedido: 00001
+Cliente: 
+    Nome: Sthevan
+    Endereco: Rua joão Casa PQ Continental  Guarulhos AC
+    Fone: 123456789
+    Email: sthevanb@mail.com
+    Total: $99.80
+Itens:
+
+    Código: 180
+    Preco Unitário: $49.90
+    Descrição: Scrum: Gestão ágil para projetos de sucesso
+    Quantidade: 001
+    Subtotal: $49.90
+
+    Código: 182
+    Preco Unitário: $49.90
+    Descrição: Métricas Ágeis: Obtenha melhores resultados em sua equipe
+    Quantidade: 001
+    Subtotal: $49.90
+=============================================
+
+=============================================
+No. Pedido: 00002
+Cliente: 
+    Nome: Sthevan
+    Endereco: Rua joão Casa PQ Continental  Guarulhos AC
+    Fone: 123456789
+    Email: sthevanb@mail.com
+    Total: $748.50
+Itens:
+
+    Código: 183
+    Preco Unitário: $49.90
+    Descrição: eXtreme Programming: Práticas para o dia a dia no desenvolvimento ágil de software
+    Quantidade: 015
+    Subtotal: $748.50
+=============================================
+
