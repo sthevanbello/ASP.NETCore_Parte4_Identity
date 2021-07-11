@@ -14,7 +14,7 @@ namespace CasaDoCodigo.RelatorioWebAPI.Controllers
     public class RelatorioController : ControllerBase
     {
 
-        private readonly List<string> Relatorio = new List<string>()
+        private static readonly List<string> Relatorio = new List<string>()
         {
             "Primeiro pedido",
             "Segundo pedido"
@@ -27,20 +27,13 @@ namespace CasaDoCodigo.RelatorioWebAPI.Controllers
         {
             StringBuilder sb = new StringBuilder();
             
-            foreach (var linha in Relatorio)
+            foreach (var item in Relatorio)
             {
-                sb.AppendLine($"{linha}");
-                
+                sb.AppendLine($"{item}");
+                sb.AppendLine("======================");
             }
             return sb.ToString();
         }
-
-        //// GET api/<RelatorioController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
 
         // POST api/<RelatorioController>
         [HttpPost]
@@ -49,16 +42,5 @@ namespace CasaDoCodigo.RelatorioWebAPI.Controllers
             Relatorio.Add(value);
         }
         
-        //// PUT api/<RelatorioController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<RelatorioController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
