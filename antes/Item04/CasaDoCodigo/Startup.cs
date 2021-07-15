@@ -105,10 +105,23 @@ namespace CasaDoCodigo
 
             services.AddAuthentication(options =>
             {
-                //Forma de autenticação local do usuário
+                //forma de autenticação local do usuário
                 options.DefaultScheme = "Cookies";
-                //Protocolo que define o fluxo de atutenticação
+                //protocolo que define o fluxo de autenticação
                 options.DefaultChallengeScheme = "OpenIdConnect";
+            })
+            .AddCookie()
+            .AddOpenIdConnect(options =>
+            {
+                options.SignInScheme = "Cookies";
+                options.Authority = "http://localhost:5000";
+                options.ClientId = "CasaDoCodigo.MVC";
+                options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
+                options.SaveTokens = true;
+                //1) autorização e 2) identidade do usuário
+                options.ResponseType = "code id_token";
+                //código de autorização + token de identidade
+                options.RequireHttpsMetadata = false;
             });
 
             services.AddHttpClient<IRelatorioHelper, RelatorioHelper>();
