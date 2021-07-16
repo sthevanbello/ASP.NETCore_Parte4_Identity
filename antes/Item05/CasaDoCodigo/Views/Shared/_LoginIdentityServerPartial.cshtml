@@ -1,0 +1,18 @@
+﻿@{ 
+    string nomeUsuario = "";
+    var claims = User.Claims.ToList();
+}
+
+@*
+1) Usuário logado: Boas vindas e opção de sair
+2) Usuário desconectado: Opção de Login
+*@
+
+@if (!string.IsNullOrWhiteSpace(nomeUsuario))
+{
+    <div>Olá, @nomeUsuario <a href="#">Sair</a></div>
+}
+else
+{
+    <div>Nenhum usuário conectado. <a href="#">Entrar</a></div>
+}
