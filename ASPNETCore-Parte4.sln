@@ -107,6 +107,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "antes\It
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDoCodigo.IdentityServer", "antes\Item03\CasaDoCodigo.IdentityServer\CasaDoCodigo.IdentityServer.csproj", "{50DE2E03-2CD6-45EE-AB32-5FE21F10573F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Item07 - Extra", "Item07 - Extra", "{A2EBD3A7-C28F-4F88-B81D-A2D66B18B91D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -312,6 +314,7 @@ Global
 		{7232FBDB-AE6B-4D5C-B895-4CE3196D8CE4} = {A06B4A50-6909-428B-BE63-69BCBA22B57B}
 		{37188A68-60A6-493E-A1ED-833432EFF06F} = {7385F338-42FF-4F72-8409-F984205D01BC}
 		{50DE2E03-2CD6-45EE-AB32-5FE21F10573F} = {A8EC1014-C945-4E12-B6F4-3FC9556FE120}
+		{A2EBD3A7-C28F-4F88-B81D-A2D66B18B91D} = {9C02FA03-63F9-42F6-B58D-BDA7B8558485}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {398437CA-EB7F-4F16-ACEE-7A7D1534AD08}

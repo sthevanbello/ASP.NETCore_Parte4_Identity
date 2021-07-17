@@ -269,3 +269,54 @@
 2021-07-16 23:15:05.579 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
 2021-07-16 23:15:05.579 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2021-07-16 23:15:05.579 -03:00 [DBG] Start key discovery request
+2021-07-16 23:17:30.390 -03:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2021-07-16 23:17:30.446 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2021-07-16 23:17:30.449 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2021-07-16 23:17:30.450 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2021-07-16 23:17:30.450 -03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2021-07-16 23:17:30.450 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2021-07-16 23:17:30.450 -03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2021-07-16 23:17:31.014 -03:00 [DBG] Login Url: /Account/Login
+2021-07-16 23:17:31.017 -03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2021-07-16 23:17:31.017 -03:00 [DBG] Logout Url: /Account/Logout
+2021-07-16 23:17:31.017 -03:00 [DBG] ConsentUrl Url: /consent
+2021-07-16 23:17:31.018 -03:00 [DBG] Consent Return Url Parameter: returnUrl
+2021-07-16 23:17:31.018 -03:00 [DBG] Error Url: /home/error
+2021-07-16 23:17:31.018 -03:00 [DBG] Error Id Parameter: errorId
+2021-07-16 23:17:52.481 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-07-16 23:17:52.487 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-07-16 23:17:52.488 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-07-16 23:17:52.493 -03:00 [DBG] Start discovery request
+2021-07-16 23:17:52.592 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-07-16 23:17:52.593 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-07-16 23:17:52.594 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-07-16 23:17:52.598 -03:00 [DBG] Start key discovery request
+2021-07-16 23:17:52.666 -03:00 [DBG] Request path /connect/token matched to endpoint type Token
+2021-07-16 23:17:52.676 -03:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2021-07-16 23:17:52.676 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2021-07-16 23:17:52.687 -03:00 [DBG] Start token request.
+2021-07-16 23:17:52.696 -03:00 [DBG] Start client validation
+2021-07-16 23:17:52.705 -03:00 [DBG] Start parsing Basic Authentication secret
+2021-07-16 23:17:52.710 -03:00 [DBG] Start parsing for secret in post body
+2021-07-16 23:17:52.731 -03:00 [DBG] Parser found secret: PostBodySecretParser
+2021-07-16 23:17:52.732 -03:00 [DBG] Secret id found: CasaDoCodigo.MVC
+2021-07-16 23:17:52.749 -03:00 [DBG] client configuration validation for client CasaDoCodigo.MVC succeeded.
+2021-07-16 23:17:52.761 -03:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2021-07-16 23:17:52.761 -03:00 [DBG] Client validation success
+2021-07-16 23:17:52.780 -03:00 [INF] {"ClientId":"CasaDoCodigo.MVC","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HMA8P43UM673:00000004","TimeStamp":"2021-07-17T02:17:52.0000000Z","ProcessId":14132,"LocalIpAddress":"127.0.0.1:35189","RemoteIpAddress":"::1","$type":"ClientAuthenticationSuccessEvent"}
+2021-07-16 23:17:52.804 -03:00 [DBG] Start token request validation
+2021-07-16 23:17:52.814 -03:00 [DBG] Start client credentials token request validation
+2021-07-16 23:17:52.850 -03:00 [DBG] CasaDoCodigo.MVC credentials token request validation success
+2021-07-16 23:17:52.861 -03:00 [INF] Token request validation success
+{"ClientId":"CasaDoCodigo.MVC","ClientName":"Casa do Código MVC","GrantType":"client_credentials","Scopes":"CasaDoCodigo.Relatorio","AuthorizationCode":null,"RefreshToken":null,"UserName":null,"AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"client_credentials","scope":"CasaDoCodigo.Relatorio","client_id":"CasaDoCodigo.MVC","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2021-07-16 23:17:52.896 -03:00 [DBG] Getting claims for access token for client: CasaDoCodigo.MVC
+2021-07-16 23:17:52.989 -03:00 [INF] {"ClientId":"CasaDoCodigo.MVC","ClientName":"Casa do Código MVC","RedirectUri":null,"Endpoint":"Token","SubjectId":null,"Scopes":"CasaDoCodigo.Relatorio","GrantType":"client_credentials","Tokens":[{"TokenType":"access_token","TokenValue":"****8xYg","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HMA8P43UM673:00000004","TimeStamp":"2021-07-17T02:17:52.0000000Z","ProcessId":14132,"LocalIpAddress":"127.0.0.1:35189","RemoteIpAddress":"::1","$type":"TokenIssuedSuccessEvent"}
+2021-07-16 23:17:52.993 -03:00 [DBG] Token request success.
+2021-07-16 23:17:53.115 -03:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-07-16 23:17:53.116 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-07-16 23:17:53.116 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-07-16 23:17:53.116 -03:00 [DBG] Start discovery request
+2021-07-16 23:17:53.242 -03:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-07-16 23:17:53.243 -03:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-07-16 23:17:53.243 -03:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-07-16 23:17:53.243 -03:00 [DBG] Start key discovery request
