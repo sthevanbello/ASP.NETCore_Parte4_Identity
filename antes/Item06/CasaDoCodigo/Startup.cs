@@ -126,6 +126,7 @@ namespace CasaDoCodigo
                 //código de autorização + token de identidade
                 options.RequireHttpsMetadata = false;
                 options.GetClaimsFromUserInfoEndpoint = true;
+                options.Scope.Add("email");
             });
 
             services.AddHttpClient<IRelatorioHelper, RelatorioHelper>();

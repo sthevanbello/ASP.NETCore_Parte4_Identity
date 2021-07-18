@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace IdentityServer4.Quickstart.UI
 {
@@ -148,7 +149,7 @@ namespace IdentityServer4.Quickstart.UI
             return View(vm);
         }
 
-        
+
         /// <summary>
         /// Show logout page
         /// </summary>
@@ -386,5 +387,78 @@ namespace IdentityServer4.Quickstart.UI
             vm.RememberLogin = model.RememberLogin;
             return vm;
         }
+
+        /// <summary>
+        /// Exibe a página de registro de usuários
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> Register(string returnUrl)
+        {
+            // construir um modelo com dados a serem exibidos na view de login
+            var vm = await BuildRegisterViewModelAsync(returnUrl);
+
+            return View(vm);
+        }
+
+        /// <summary>
+        /// Handle postback from username/password register
+        /// </summary>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterInputModel model, string button)
+        {
+            if (button != "register")
+            {
+                // o usuário clicou no botão "cancelar"
+                var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
+                if (context != null)
+                {
+                    // se um usuário cancela, enviamos o resultado de volta para o IdentityServer como acesso negado
+                    await _interaction.GrantConsentAsync(context, ConsentResponse.Denied);
+
+                    // podemos confiar em model.ReturnUrl, pois GetAuthorizationContextAsync retornou não-nulo
+                    return Redirect(model.ReturnUrl);
+                }
+                else
+                {
+                    // já que não temos um contexto válido, voltamos para a página inicial
+                    return Redirect("~/");
+                }
+            }
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.Username, Email = model.Email };
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    var claimsResult = await _userManager.AddClaimsAsync(user, new Claim[]
+                    {
+                        new Claim("name", user.UserName),
+                        new Claim(JwtClaimTypes.GivenName, ""),
+                        new Claim(JwtClaimTypes.FamilyName, ""),
+                        new Claim("email", user.Email),
+                        new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
+                    });
+                    if (!claimsResult.Succeeded)
+                    {
+                        throw new Exception(claimsResult.Errors.First().Description);
+                    }
+
+                    return Redirect(model.ReturnUrl);
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.Code, error.Description);
+                }
+            }
+
+            // algo deu errado, vamos mostar a view com o erro
+            var vm = await BuildRegisterViewModelAsync(model);
+            return View(vm);
+
+        }
+
     }
 }

@@ -16,6 +16,7 @@ namespace CasaDoCodigo.IdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResources.Email()
             };
         }
 
@@ -59,7 +60,7 @@ namespace CasaDoCodigo.IdentityServer
                     PostLogoutRedirectUris = { casaDoCodigoMvcUrl + "/signout-callback-oidc" },
 
                     AllowOfflineAccess = true,
-                    AllowedScopes = { "openid", "profile", "CasaDoCodigo.Relatorio" }
+                    AllowedScopes = { "openid", "profile", "email", "CasaDoCodigo.Relatorio" }
                     // OpenIdConnect: "openid", "profile" (id_token)
                     // OAuth:  "CasaDoCodigo.Relatorio" (access_token)
                 },
